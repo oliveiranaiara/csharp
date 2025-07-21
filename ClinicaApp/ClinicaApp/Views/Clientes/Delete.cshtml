@@ -1,0 +1,25 @@
+﻿@model ClinicaApp.Models.Cliente
+
+@{
+    ViewData["Title"] = "Deletar Cliente";
+}
+<h4>@Model.Nome</h4>
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="ClienteId" />
+
+    <label asp-for="Nome"></label>
+    <input asp-for="Nome" disabled />
+
+    <label asp-for="Dtnasc"></label>
+    <input asp-for="Dtnasc" disabled />
+
+    <label asp-for="Salario"></label>
+    <input asp-for="Salario" disabled />
+
+    <input type="submit" class="btn btn-danger" value="Deletar" />
+</form>
+
+<a asp-action="Delete" asp-route-id="@Model.ClienteId">Deletar</a>

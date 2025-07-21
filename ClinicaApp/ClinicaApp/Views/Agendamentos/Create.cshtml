@@ -1,0 +1,51 @@
+﻿@model ClinicaApp.Models.Agendamento
+
+
+@{
+    ViewData["Title"] = "Novo Agendamento";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form asp-action="Create">
+
+    <div class="row mb-2">
+        <div class="col-md-6 ">
+            <label asp-for="Cliente" class="control-label"></label>
+            <input asp-for="Cliente" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-4 ">
+            <label asp-for="Especialidade" class="control-label"></label>
+            <input asp-for="Especialidade" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Medico" class="control-label"></label>
+            <input asp-for="Medico" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label asp-for="DataConsulta" class="control-label"></label>
+            <input asp-for="DataConsulta" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label asp-for="TipoAtendimento" class="control-label"></label>
+            <input asp-for="TipoAtendimento" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-6">
+            <input type="submit" value="Cadastrar Consulta" class="btn btn-success w-100" />
+        </div>
+        <div class="col-6">
+            <a asp-controller="Agendamentos" asp-action="Index" class="btn btn-secondary w-100">Voltar</a>
+        </div>
+    </div>
+
+
+
+
+</form>

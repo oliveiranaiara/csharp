@@ -1,0 +1,27 @@
+﻿@model AulaEntity.Models.Grade
+
+@{
+    ViewData["Title"] = "Alunos por Turma";
+}
+
+<h2>Turma:  @Model.GradeName</h2>
+<p>
+    <a asp-action="Create" asp-route-gradeId="@Model.GradeId">Adicionar Aluno</a>
+
+</p>
+
+@if (Model.Students != null && Model.Students.Any())
+{
+    <ul>
+        @foreach (var aluno in Model.Students)
+        {
+            <li>@aluno.Name</li>
+        }
+    </ul>
+
+
+}
+else
+{
+    <p>Nenhum aluno cadastrado nesta turma.</p>
+}

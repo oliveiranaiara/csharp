@@ -1,0 +1,6 @@
+@MiniCatalago_HostAddress = http://localhost:5101
+
+GET {{MiniCatalago_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Cliente>
+
+<a asp-action="Create">Criar Novo Registro</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.ClienteId)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Nome)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Dtnasc)</th>
+            <th>Salário</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.ClienteId</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Dtnasc</td>
+                <td>@cliente.Salario</td>
+                <td>
+                    @*Links para edição de cada item listado pelo id*@
+                    <a asp-page="./Edit" asp-route-id="@cliente.ClienteId">Editar</a>
+                    <a asp-page="./Delete" asp-route-id="@cliente.ClienteId">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

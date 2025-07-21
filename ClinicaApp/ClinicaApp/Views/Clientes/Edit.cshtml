@@ -1,0 +1,25 @@
+﻿@model ClinicaApp.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+}
+<h4>@Model.Nome</h4>
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="ClienteId" />
+    <label asp-for="Nome"></label>
+    <input asp-for="Nome" required placeholder="Digite o seu nome">
+
+
+    <label asp-for="Dtnasc"></label>
+    <input asp-for="Dtnasc">
+
+
+    <label asp-for="Salario"></label>
+    <input asp-for="Salario" name="Salario">
+
+
+    <input type="submit" class="btn btn-success" value="Atualizar" />
+
+</form>
